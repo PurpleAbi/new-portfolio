@@ -1,0 +1,66 @@
+
+.titles{
+    font-family: "Questrial", serif;
+}
+
+body{
+    font-family: "PT Serif", serif;
+    background-color: #FFEBB7;
+    display: flex;
+    justify-content: center;
+}
+
+.container{   
+    width: 900px; 
+}
+.title-page{
+   height: 100vh;
+   background-image: url('popcorn_background.jpg')  ;
+   background-size: cover;
+   box-shadow: 10px 10px 5px lightgrey;
+   display: flex ;
+   justify-content: center;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   align-items: start;
+}
+
+.text{
+    text-align: end;
+    background-color: #20236df0;
+    margin-left: -3rem;
+    color: white;
+    padding: 2rem;
+    border-radius: 0 2rem 2rem 0;
+    margin-left: .25rem;
+    margin-top: 3.5rem;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr 3fr;
+    gap: 1.5rem;
+    text-align: justify;
+    margin-top: 2rem;
+}
+
+.card{
+    background-color: #B8E2EA;
+    min-height: 280px;
+    max-height: 400px;
+    padding: 2rem;
+    color: #20236D;
+    /* border: .25rem solid #E67A7A ; */
+    border-radius: 2rem;
+    
+}
+
+.subtitle{
+    grid-column: span 3;
+    background-color: #E67A7A;
+    text-align: center;
+    color: white;
+    padding-top: 1rem;
+}
+
