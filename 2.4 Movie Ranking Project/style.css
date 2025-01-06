@@ -17,6 +17,7 @@ body{
    height: 100vh;
    background-image: url('popcorn_background.jpg')  ;
    background-size: cover;
+   background-position: right top;
    box-shadow: 10px 10px 5px lightgrey;
    display: flex ;
    justify-content: center;
@@ -64,3 +65,23 @@ body{
     padding-top: 1rem;
 }
 
+@media (max-width: 600px){
+    .cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr repeat(3, 3fr) 1fr repeat(3, 3fr);
+    }
+
+    .card{
+        grid-column: span 3;  
+    }
+
+    body{
+        font-size: 1.2rem;
+    }
+    .title-page{
+        background-size: contain;
+        background-position: right center;
+        background-attachment: fixed;
+    }
+}
