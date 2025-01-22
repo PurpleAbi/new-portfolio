@@ -1,11 +1,22 @@
+:root{
+    --color-primary: #D4E2D4;
+    --color-shadow-primary: #1f221f;
+    --color-secondary: #FFCACC;
+    --color-shadow-secondary: #6b4646;
+    --color-tertiary-dark: #512D6D;
+    --color-tertiary-light: #DBC4F0;
+    --color-background: #FAF3F0;
+    --color-extra: white;
+}
+
 body{
     font-family: "Forum", serif;
-    background-color:#FAF3F0;
+    background-color:var(--color-background);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #512D6D;
+    color: var(--color-tertiary-dark);
     margin: 0;
 }
 
@@ -16,7 +27,7 @@ body{
     margin: 1rem ;
     margin-top: 2rem;
     padding-bottom: 1em;
-    border-bottom: solid #512D6D;
+    border-bottom: solid var(--color-tertiary-dark);
 }
 .logo{
     margin: 0;  
@@ -36,27 +47,27 @@ body{
     
 }
 .links a:hover{
-    color: #DBC4F0;
+    color: var(--color-tertiary-light);
     font-weight: bolder;
     font-style: italic;
 }
 a{
     text-decoration: none;
-    color: #512D6D;
+    color: var(--color-tertiary-dark);
 }
 
 .container{
     width: 70%;
     height: 500px;
-    background-color: #D4E2D4;
-    box-shadow: -0em 4em 3em -3em #1f221f;
+    background-color: var(--color-primary);
+    box-shadow: -0em 4em 3em -3em var(--color-shadow-primary);
     display: flex;
     flex-direction: column;
 }
 
 .public{
-    background-color: #FFCACC;
-    box-shadow: -0em 4em 3em -3em #6b4646;
+    background-color: var(--color-secondary);
+    box-shadow: -0em 4em 3em -3em var(--color-shadow-secondary);
 }
 .cards{
     display: flex;
@@ -66,8 +77,8 @@ a{
 }
 
 .card{
-    background-color: #DBC4F0 ;
-    border: solid #512D6D;
+    background-color: var(--color-tertiary-light) ;
+    border: solid var(--color-tertiary-dark);
     text-align: center;
     /* box-shadow: -0em 1.5em 2em -1em #2b173b;     */
 }
@@ -97,17 +108,17 @@ h2{
 
 button{
     margin-bottom: 1.5rem;
-    background-color: white;
+    background-color: var(--color-extra);
     border-radius: 30px;
     padding: .25rem 1rem;
     border: none;
-    color: #512D6D;
+    color: var(--color-tertiary-dark);
     transition-duration: 0.4s;
 }
 
 button:hover{
-    background-color: #512D6D;
-    color: white;
+    background-color: var(--color-tertiary-dark);
+    color: var(--color-extra);
     /* box-shadow: -0em 1.5em 2em -1em #2b173b; */
 }
 
