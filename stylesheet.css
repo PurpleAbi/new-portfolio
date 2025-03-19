@@ -8,7 +8,11 @@
     --color-background: #FAF3F0;
     --color-extra: white;
 }
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     font-family: "Forum", serif;
     background-color:var(--color-background);
@@ -39,6 +43,9 @@ body{
 }
 .left-header{
     margin-left: 1rem;
+}
+.icon{
+    display: none;
 }
 .links{
     text-align: end;
@@ -158,8 +165,30 @@ h3{
     }
 
     .parent-header{
-        font-size: small;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+
     }
+    .left-header{
+        margin: 0;
+        padding-left: .4rem;
+    }
+    .links{
+        display: none;
+        flex-direction: column;
+        position: relative;
+        
+        width: 38%;
+        top: 1rem;
+        right: -14%;
+        margin: 1.2rem;
+        gap: .4rem;
+    }
+    .icon {  
+        display: inherit;
+        padding-right: .4rem;
+      }
     h2{
         margin-top: 1rem;
         margin-bottom: 0;
