@@ -1,4 +1,4 @@
-:root{
+:root {
     --color-primary: #D4E2D4;
     --color-shadow-primary: #1f221f;
     --color-secondary: #FFCACC;
@@ -8,14 +8,16 @@
     --color-background: #FAF3F0;
     --color-extra: white;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: "Forum", serif;
-    background-color:var(--color-background);
+    background-color: var(--color-background);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,46 +26,53 @@ body{
     margin: 0;
 }
 
-.parent-header{
+.parent-header {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
-    margin: 1rem ;
+    margin: 1rem;
     margin-top: 2rem;
     padding-bottom: 1em;
     border-bottom: solid var(--color-tertiary-dark);
 }
-.logo{
-    margin: 0;  
+
+.logo {
+    margin: 0;
     font-family: "Montserrat Alternates", serif;
 }
-.logo:hover{
+
+.logo:hover {
     cursor: pointer;
     font-weight: bolder;
 }
-.left-header{
+
+.left-header {
     margin-left: 1rem;
 }
-.icon{
+
+.icon {
     display: none;
 }
-.links{
+
+.links {
     text-align: end;
     display: flex;
     justify-content: space-around;
-    
+
 }
-.links a:hover{
+
+.links a:hover {
     color: var(--color-tertiary-light);
     font-weight: bolder;
     font-style: italic;
 }
-a{
+
+a {
     text-decoration: none;
     color: var(--color-tertiary-dark);
 }
 
-.container{
+.container {
     width: 70%;
     height: 500px;
     background-color: var(--color-primary);
@@ -72,48 +81,53 @@ a{
     flex-direction: column;
 }
 
-.public{
+.public {
     background-color: var(--color-secondary);
     box-shadow: -0em 4em 3em -3em var(--color-shadow-secondary);
 }
-.cards{
+.cards {
     display: flex;
     justify-content: center;
     gap: 1em;
-    margin-bottom: 2rem;
+    margin: 1rem 0;
 }
 
-.card{
-    background-color: var(--color-tertiary-light) ;
+.card {
+    background-color: var(--color-tertiary-light);
     border: solid var(--color-tertiary-dark);
     text-align: center;
     /* box-shadow: -0em 1.5em 2em -1em #2b173b;     */
 }
 
-h4{
+h4 {
     margin-bottom: .8em;
 }
+
 img {
     filter: grayscale(60%);
     width: 180px;
     height: 180px;
     object-fit: cover;
 
-  }
-.title{
+}
+
+.title {
+    margin: 1rem 0 0 0;
     text-align: center;
 }
-h1{
+
+h1 {
     font-family: "Montserrat Alternates", serif;
     font-weight: 400;
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
-h2{
+
+h2 {
     font-weight: 300;
     margin-top: 0;
 }
 
-button{
+button {
     margin-bottom: 1.5rem;
     background-color: var(--color-extra);
     border-radius: 30px;
@@ -123,76 +137,110 @@ button{
     transition-duration: 0.4s;
 }
 
-button:hover{
+button:hover {
     background-color: var(--color-tertiary-dark);
     color: var(--color-extra);
     /* box-shadow: -0em 1.5em 2em -1em #2b173b; */
 }
 
-.content{
-    display: grid;
-    grid-template-rows: 1fr;
+.content {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 3rem 5rem 3rem;
     text-align: right;
-    margin: 3rem;
+    justify-content: space-between;
+    height: 50%;
 }
-
-.aboutme{
+.item{  
+    text-align: right;
+    font-size: 1.4rem; 
+    display: flex;
+    justify-content: end;
+}
+.item>a{
+    text-shadow: 0px 4px 26px #32154a;
+    width: max-content;
+}
+.item>a:hover{
+    color: white;
+    font-weight: bolder;
+    font-style: italic;
+}
+.two{
+    align-self: start;
+    text-align: left;
+}
+.aboutme {
     text-align: justify;
 }
 
-h3{
+h3 {
     font-weight: lighter;
 }
 
 @media (max-width: 700px) {
-    body{
+    body {
         height: 1000px;
         width: 100%;
     }
-    .container{
+
+    .container {
         width: 90%;
-        height: 96%;  
+        height: 94%;
     }
-    .cards{
+
+    .body-public {
+        height: 100vh;
+    }
+
+    .cards {
         flex-direction: column;
         align-items: center;
         gap: 2rem;
         margin-top: 2rem;
     }
 
-    .card{
-        width: 180px;
+    .card {
+        width: max-content;
+        
     }
 
-    .parent-header{
-        overflow: hidden;
+    .parent-header {
         display: flex;
         justify-content: space-between;
-
+        height: auto;
     }
-    .left-header{
+
+    .left-header {
         margin: 0;
         padding-left: .4rem;
     }
-    .links{
+
+    .links {
         display: none;
         flex-direction: column;
         position: relative;
-        
         width: 38%;
         top: 1rem;
         right: -14%;
         margin: 1.2rem;
         gap: .4rem;
     }
-    .icon {  
+
+    .icon {
         display: inherit;
         padding-right: .4rem;
-      }
-    h2{
+    }
+
+    h2 {
         margin-top: 1rem;
         margin-bottom: 0;
     }
-    
-}
 
+    .content{
+        margin: 2rem 1rem 5rem 1rem;
+    }
+    .item{
+        font-size: 1.2rem;
+    }
+}
