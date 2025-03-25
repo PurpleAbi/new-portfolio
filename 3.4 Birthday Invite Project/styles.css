@@ -1,55 +1,132 @@
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#9f7ae2+0,6b41bb+17,5a37ad+33,2d2483+67,290e44+83,251643+100 */
 
-
-body{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
     height: 100vh;
     font-family: "Encode Sans Condensed", serif;
     display: flex;
     justify-content: center;
-    align-items: center;
     color: white;
     background-color: #91A6FD;
 }
 
-.main{
-    font-family: "Style Script", serif;
-    font-size: 3rem;
-   
-}
-
-.container{
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    background: linear-gradient(135deg,  rgba(159,122,226,1) 0%,rgba(107,65,187,1) 17%,rgba(90,55,173,1) 33%,rgba(45,36,131,1) 67%,rgba(41,14,68,1) 83%,rgba(37,22,67,1) 100%);
+.container {
     width: 400px;
     height: 500px;
     text-align: center;
+    margin-top: 1rem;
+    perspective: 1000px;
+}
+
+.container:hover .container-inner {
+    transform: rotateY(180deg);
+}
+
+.container-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.front{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(159, 122, 226, 1) 0%, rgba(107, 65, 187, 1) 17%, rgba(90, 55, 173, 1) 33%, rgba(45, 36, 131, 1) 67%, rgba(41, 14, 68, 1) 83%, rgba(37, 22, 67, 1) 100%);
     box-shadow: -1em 2em 2em #130a8bd7;
 }
-
-img{
-   height: 200px;
-   border-radius: 50%;
+.back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, rgba(159, 122, 226, 1) 0%, rgba(107, 65, 187, 1) 17%, rgba(90, 55, 173, 1) 33%, rgba(45, 36, 131, 1) 67%, rgba(41, 14, 68, 1) 83%, rgba(37, 22, 67, 1) 100%);
+    color: white;
+    transform: rotateY(180deg);
+    box-shadow: 1em 2em 2em #130a8bd7;
 }
-
-.title{
-    margin: 0;
+img {
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
 }
-
-li{
+@keyframes cursor{
+    0% {left:280px; top: -200px;}
+    100%{left:0; top: 0;}
+}
+svg{
+    width:2rem;
+    height: 2rem;
+    fill: white;
+    position: relative;
+    left: 280px;
+    top: -200px;
+    animation-name: cursor;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.title {
+    font-family: "Style Script", serif;
+    font-size: 3rem;
+}
+li {
     list-style: none;
 }
 
-ul{
-  padding-left: 0;
-  margin-top: 0;
-}
-
-.subtitle{
+.subtitle {
     font-weight: 400;
-    margin: 0 0 .5rem 0;
+    margin: 0 0 .8rem 0;
 }
 
-.topMargin{
-    margin-top: .5rem;
+a{
+    color: white;
+    
+}
+
+@media (max-width: 700px) {
+    body{
+        align-items: center;
+    }
+    .container {
+        width: 300px;
+        height: 400px;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+    img {
+        height: 150px;
+    }
+
+    @keyframes cursor{
+        0% {left:200px; top: -100px;}
+        100%{left:0; top: 0;}
+
+    }
+    svg{
+        width:1.5rem;
+        height: 1.5rem;
+        left: 200px;
+        top: -100px;
+    }
 }
