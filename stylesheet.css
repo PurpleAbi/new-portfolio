@@ -174,8 +174,9 @@ button:hover {
     text-align: justify;
 }
 
-h3 {
+h3, h4 {
     font-weight: lighter;
+    font-size: 1.2rem;
 }
 
 @media (max-width: 700px) {
