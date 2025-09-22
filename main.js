@@ -6,3 +6,7 @@ function burgerMenu() {
       navLinks.style.display = "flex";
     }
   }
+  
+  const myAge = (new Date().getFullYear()) - 1995;
+  document.getElementById("my-age").innerText = myAge;
+
