@@ -127,11 +127,49 @@ h2 {
     margin-top: 0;
 }
 
+.homepage-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 1rem 2rem 1rem;
+    text-align: center;
+    gap: 1rem;
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  border-radius: 50%;
+  background:
+    linear-gradient(0deg ,rgb(81 45 109/50%) 30%,#0000 0 70%,rgb(81 45 109/100%) 0) 50%/8% 100%,
+    linear-gradient(90deg,rgb(81 45 109/25%) 30%,#0000 0 70%,rgb(81 45 109/75% ) 0) 50%/100% 8%;
+  background-repeat: no-repeat;
+  animation: l23 1s infinite steps(12);
+}
+.loader::before,
+.loader::after {
+   content: "";
+   grid-area: 1/1;
+   border-radius: 50%;
+   background: inherit;
+   opacity: 0.915;
+   transform: rotate(30deg);
+}
+.loader::after {
+   opacity: 0.83;
+   transform: rotate(60deg);
+}
+@keyframes l23 {
+  100% {transform: rotate(1turn)}
+}
+
 button {
     margin-bottom: 1.5rem;
     background-color: var(--color-extra);
     border-radius: 30px;
-    padding: .25rem 1rem;
+    padding: .25rem 2rem .8rem 2rem;
     border: none;
     color: var(--color-tertiary-dark);
     transition-duration: 0.4s;
@@ -181,7 +219,7 @@ h3, h4 {
 
 @media (max-width: 700px) {
     body {
-        height: 1000px;
+        /* height: 1000px; */
         width: 100%;
     }
 
