@@ -11,7 +11,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Forum&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="icon" type="image/png" href="assets/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="ASM" />
+    <link rel="manifest" href="assets/images/site.webmanifest" />
 </head>
 
 <body>
@@ -27,23 +34,51 @@
             </div>
             <a href="javascript:void(0);" class="icon" onclick="burgerMenu()">
                 <i class="fa fa-bars"></i>
-              </a>
+            </a>
         </header>
 
         <div class="title">
-            <h1>Abigail Santana Medina</h1>
-            <h2>newbie web developer</h2>
+            <h1><span>A</span>bigail <span>S</span>antana <span>M</span>edina</h1>
+            <h2>web developer</h2>
         </div>
 
         <div class="homepage-text">
-            <h3>Hi! Thanks for your interest in my website. <br> My portfolio is currently under construction.</h3>
-            <div class="loader"></div>
-            <h5 id="demo"></h5> 
-            <a href="https://purpleabi.github.io/maquetacion-portafolio"><button> 👇 <br> HERE </button></a>
+            <div class="left">
+                <div class="categories hover-underline-animation" data-target="frontend">
+                    <img class="icon-homepage" src="assets/images/browser-check.svg" alt="">
+                    <h3>Frontend Projects</h3>
+                </div>
+                <div class="categories hover-underline-animation" data-target="fullstack">
+                    <img class="icon-homepage" src="assets/images/stack-3.svg" alt="">
+                    <h3>Fullstack Projects</h3>
+                </div>
+                <div class="categories hover-underline-animation" data-target="backend">
+                    <img class="icon-homepage" src="assets/images/database (1).svg" alt="">
+                    <h3>Backend Projects</h3>
+                </div>
+            </div>
+            <div class="right hidden">
+                <ul id="frontend" class="project-list ">
+                    <li><a href="https://www.salonnajahode.cz/">Salon na Jahode</a></li>
+                    <li><a href="./3.4 Birthday Invite Project/index.html">Birthday Invitation</a></li>
+                    <li><a href="https://purpleabi.github.io/maquetacion-portafolio/">Virtual Resumee</a></li>
+                </ul>
+
+                <ul id="fullstack" class="project-list ">
+                    <li><a href="https://tired-overthinker-cook.onrender.com/">Tired Overthinker Cook</a></li>
+                    <li><a href="https://github.com/PurpleAbi/ranking-project">Movies and Series Reviews</a></li>
+                </ul>
+
+                <ul id="backend" class="project-list ">
+                    <li><a href="https://github.com/PurpleAbi/literalura-challenge">Literalura</a></li>
+                    <li><a href="https://github.com/PurpleAbi/forohub">Forohub</a></li>
+                    <li><a href="https://github.com/PurpleAbi/currency-calculator">Currency Calculator</a></li>
+                </ul>
+            </div>
         </div>
 
     </div>
-<script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
