@@ -361,6 +361,10 @@ h4 {
         font-size: 1.8rem;
     }
 
+    h1{
+        font-size: 4rem;
+    }
+
     .container {
         width: 76vw;
         height: 70vh;
@@ -370,10 +374,6 @@ h4 {
         height: 6vh;
         margin-top: 3rem;
         padding-bottom: 0;
-    }
-
-    .homepage-text{
-
     }
 
     .title {
