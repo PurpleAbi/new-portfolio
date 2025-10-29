@@ -294,6 +294,15 @@ li {
     margin: .4rem 0;
 }
 
+li:hover{
+    font-weight: bolder;
+}
+
+.fa-heart-o , .fa-star-o, .fa-moon-o{
+    font-size: 1rem !important;
+    margin-right: .4rem;
+}
+
 .content {
     display: flex;
     flex-direction: column;

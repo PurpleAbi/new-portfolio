@@ -1,18 +1,8 @@
-// function burgerMenu() {
-//   const navLinks = document.querySelector(".links");
-//   if (navLinks.style.display === "flex") {
-//     navLinks.style.display = "none";
-//   } else {
-//     navLinks.style.display = "flex";
-//   }
-// }
 
-/* Open */
 function openNav() {
   document.getElementById("myNav").style.height = "90vh";
 }
 
-/* Close */
 function closeNav() {
   document.getElementById("myNav").style.height = "0%";
 }
