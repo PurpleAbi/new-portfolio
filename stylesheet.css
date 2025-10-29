@@ -294,11 +294,13 @@ li {
     margin: .4rem 0;
 }
 
-li:hover{
+li:hover {
     font-weight: bolder;
 }
 
-.fa-heart-o , .fa-star-o, .fa-moon-o{
+.fa-heart-o,
+.fa-star-o,
+.fa-moon-o {
     font-size: 1rem !important;
     margin-right: .4rem;
 }
@@ -367,6 +369,76 @@ h4 {
     transform-origin: bottom center;
 }
 
+/* Fondo base */
+.holo-background {
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Franja holográfica animada --- */
+.holo-background::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 300%;
+    height: 40%;
+    background:
+        /* Franja blanca central (brillo) */
+        linear-gradient(120deg,
+            transparent 47%,
+            rgba(255, 255, 255, 0.8) 49%,
+            rgba(255, 255, 255, 1) 50%,
+            rgba(255, 255, 255, 0.8) 51%,
+            transparent 53%),
+        /* Gradiente arcoíris holográfico */
+        linear-gradient(135deg,
+            #ff005e,
+            #ff7b00,
+            #3eff00,
+            blue,
+            #0080ff,
+            #7b00ff,
+            #ff00a6,
+            #9c0039);
+
+    background-size: 300% 300%;
+    background-blend-mode: screen;
+    mix-blend-mode: lighten;
+    filter: blur(30px);
+    opacity: 0.5;
+
+    animation:
+        moveDiagonal 4s linear infinite -2s,
+        colorShift 3s linear infinite -1s;
+}
+
+/* --- Animaciones --- */
+@keyframes moveDiagonal {
+    0% {
+        transform: translate(-60%, -60%) rotate(-45deg);
+    }
+
+    100% {
+        transform: translate(60%, 60%) rotate(-45deg);
+    }
+}
+
+/* Movimiento del color arcoíris */
+@keyframes colorShift {
+    0% {
+        background-position: 50% 50%;
+    }
+
+    50% {
+        background-position: 150% 150%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
 @media (min-width:1300px) {
 
     body {
@@ -393,6 +465,7 @@ h4 {
         height: 18vh;
     }
 }
+
 
 @media (max-width: 950px) {
 
@@ -422,14 +495,14 @@ h4 {
         width: 100%;
         text-align: center;
         margin-top: 30px;
-        
+
     }
 
     /* The navigation links inside the overlay */
     .overlay a {
         padding: .8rem;
-       font-size: 2rem;
-       color: var(--color-primary);
+        font-size: 2rem;
+        color: var(--color-primary);
     }
 
     /* Position the close button (top right corner) */
@@ -475,23 +548,39 @@ h4 {
         margin-bottom: 1rem;
     }
 
+    .homepage-text{
+        flex-direction: column;
+    }
+
+    .right, .left{
+        width: 100%;
+    }
+
+    h3, li{
+        font-size: 1rem;
+    }
     h2 {
         margin: 1rem 0 1.4rem 0;
     }
 
     .contact {
-    justify-content: space-around;
-    height: 80%;
-    font-size: 1rem;
-    margin: 1rem 3rem 5rem 3rem !important;
-}
+        justify-content: space-around;
+        height: 80%;
+        font-size: 1rem;
+        margin: 1rem 3rem 5rem 3rem !important;
+    }
 
-    .content{
-        margin: 1rem ;
+    .content {
+        margin: 1rem;
     }
 
     .item {
         font-size: 1rem;
+    }
+
+    .holo-background::before {
+        width: 50%;
+        height: 300%;
     }
 
 }
