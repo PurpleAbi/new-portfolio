@@ -20,17 +20,22 @@
       <div class="child-header left-header">
         <a class="logo" href="/index.html">ASM Portfolio</a>
       </div>
-      <div class="child-header links">
-        <a href="./about.html">About me</a>
-        <a href="https://purpleabi.github.io/maquetacion-portafolio/">Virtual Resumee</a>
-        <a href="./contact.html">Contact</a>
-      </div>
-      <a href="javascript:void(0);" class="icon" onclick="burgerMenu()">
-        <i class="fa fa-bars"></i>
-      </a>
+      <div id="myNav" class="overlay">
+                <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" style="display: none;">
+                   <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
+                <div class="child-header overlay-content links">
+                    <a href="about.html">About me</a>
+                    <a href="https://purpleabi.github.io/maquetacion-portafolio/">Virtual Resumee</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="openNav()" style="display: none;">
+                <i class="fa fa-bars"></i>
+            </a>
     </header>
     
-    <div class="content ">
+    <div class="content contact">
       <div class="item"> 
         <p>📧 email: <br> abigail.santana.medina@gmail.com</p> <br>
       </div>

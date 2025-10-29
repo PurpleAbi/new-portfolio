@@ -15,6 +15,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: "Forum", serif;
     background-color: var(--color-background);
@@ -52,10 +53,6 @@ body {
     margin-left: 1rem;
 }
 
-.icon {
-    display: none;
-}
-
 .links {
     text-align: end;
     display: flex;
@@ -83,7 +80,7 @@ a {
     flex-direction: column;
 }
 
-.right { 
+.right {
     height: auto;
     width: 70%;
     flex-direction: column;
@@ -94,12 +91,14 @@ a {
     border: dotted 1.4px var(--color-tertiary-light);
 }
 
-.hidden{
+.hidden {
     display: none;
 }
-.visible{
+
+.visible {
     display: flex;
 }
+
 .project-list {
     height: 0;
     opacity: 0;
@@ -116,7 +115,8 @@ a {
     /* adjusted with JS */
     opacity: 1;
 }
-.project-list.animating{
+
+.project-list.animating {
     overflow: hidden;
 }
 
@@ -127,11 +127,13 @@ a {
     padding: .4rem;
     margin: .4rem;
 }
-.categories.active{
+
+.categories.active {
     font-weight: 900;
     box-shadow: 2px 2px 20px var(--color-tertiary-light);
     background-color: #faf3f06a;
 }
+
 .categories:hover {
     cursor: pointer;
     transform: scale(1.2);
@@ -276,6 +278,7 @@ h2 {
     text-align: center;
     width: 70%;
     align-self: center;
+
     & .left {
         height: auto;
         width: 80%;
@@ -357,11 +360,11 @@ h4 {
 
 @media (min-width:1300px) {
 
-    body{
+    body {
         font-size: 1.8rem;
     }
 
-    h1{
+    h1 {
         font-size: 4rem;
     }
 
@@ -378,11 +381,56 @@ h4 {
 
     .title {
         margin-top: 5rem;
-        height:18vh;
+        height: 18vh;
     }
 }
 
 @media (max-width: 950px) {
+
+    .overlay {
+        /* Height & width depends on how you want to reveal the overlay (see JS) */
+        height: 0;
+        width: 88vw;
+        position: fixed;
+        z-index: 1;
+        left: 6vw;
+        top: 5vh;
+        background-color: var(--color-tertiary-dark);
+        /* fallback color */
+        background-color: #32154aef;
+        /* w/opacity */
+        overflow-x: hidden;
+        /* Disable horizontal scroll */
+        transition: 0.5s;
+    }
+
+    /* Position the content inside the overlay */
+    .overlay-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+        
+    }
+
+    /* The navigation links inside the overlay */
+    .overlay a {
+        padding: .8rem;
+       font-size: 2rem;
+       color: var(--color-primary);
+    }
+
+    /* Position the close button (top right corner) */
+    .overlay .closebtn {
+        display: inherit !important;
+        position: absolute;
+        font-size: 2rem;
+        top: 3vh;
+        right: 3vw;
+    }
 
     .container {
         width: 88vw;
@@ -392,8 +440,10 @@ h4 {
     .body-public {
         height: 100vh;
     }
-     
-    h1{font-size: 2.2rem;}
+
+    h1 {
+        font-size: 2.2rem;
+    }
 
     .parent-header {
         display: flex;
@@ -406,36 +456,33 @@ h4 {
         padding-left: .4rem;
     }
 
-    .links {
-        display: none;
-        flex-direction: column;
-        position: relative;
-        width: 38%;
-        top: 1rem;
-        right: -14%;
-        margin: 1.2rem;
-        gap: .4rem;
-    }
-
     .icon {
-        display: inherit;
+        font-size: 1.6rem;
+        display: inherit !important;
         padding-right: .4rem;
     }
 
-    .title{
+    .title {
         margin-bottom: 1rem;
     }
+
     h2 {
-        margin: 1rem 0  1.4rem 0 ;
+        margin: 1rem 0 1.4rem 0;
     }
 
-    .content {
-        margin: 2rem 1rem 5rem 1rem;
+    .contact {
+    justify-content: space-around;
+    height: 80%;
+    font-size: 1rem;
+    margin: 1rem 3rem 5rem 3rem !important;
+}
+
+    .content{
+        margin: 1rem ;
     }
 
     .item {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
-
 
 }
