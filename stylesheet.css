@@ -180,6 +180,45 @@ h1 {
     -webkit-text-stroke: 2px var(--color-tertiary-dark);
 }
 
+.holo-title {
+    background:
+         linear-gradient(110deg,
+            #FFCACC 0%,
+            rgb(216, 219, 174) 10%,
+            #FAF3F0 20%,
+            #D4E2D4 30%,
+            rgb(175, 244, 243) 40%,
+            rgb(166, 195, 229) 50%,
+            rgb(167, 129, 243) 60%,
+            #DBC4F0 70%,
+            rgb(223, 171, 242) 80%,
+            rgb(252, 183, 243) 90%,
+            #FFCACC 100%);
+
+    background-size: 200% 200%;
+    background-blend-mode: color;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: colorShift 20s linear infinite;
+    mix-blend-mode: overlay;
+    filter: blur(.2px);
+    opacity: 0.8;
+}
+
+@keyframes colorShift{
+    0% {
+        background-position: 0% 0%;
+    }
+    50%{
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: -200% 0%;
+    }
+}
+
 .title {
     perspective: 1000px;
 }
@@ -379,65 +418,65 @@ h4 {
 .holo-background::before {
     content: "";
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 300%;
-    height: 40%;
+    top: 30%;
+    left: 0%;
+    width: 150%;
+    height: 100%;
     background:
         /* Franja blanca central (brillo) */
-        linear-gradient(120deg,
+        linear-gradient(180deg,
             transparent 47%,
             rgba(255, 255, 255, 0.8) 49%,
             rgba(255, 255, 255, 1) 50%,
             rgba(255, 255, 255, 0.8) 51%,
-            transparent 53%),
+            transparent 53%), 
         /* Gradiente arcoíris holográfico */
-        linear-gradient(135deg,
-            #ff005e,
-            #ff7b00,
-            #3eff00,
-            blue,
-            #0080ff,
-            #7b00ff,
-            #ff00a6,
-            #9c0039);
+        linear-gradient(
+            rgba(255, 0, 0, 1) 0%,
+            rgba(255, 154, 0, 1) 10%,
+            rgba(208, 222, 33, 1) 20%,
+            rgba(79, 220, 74, 1) 30%,
+            rgba(63, 218, 216, 1) 40%,
+            rgba(28, 127, 238, 1) 50%,
+            rgb(61, 70, 244, 1) 60%,
+            rgba(95, 21, 242, 1) 70%,
+            rgba(186, 12, 248, 1) 80%,
+            rgba(251, 7, 217, 1) 90%,
+            rgba(255, 0, 0, 1) 100%);
 
-    background-size: 300% 300%;
+    background-size: 100% 300%;
     background-blend-mode: screen;
-    mix-blend-mode: lighten;
-    filter: blur(30px);
-    opacity: 0.5;
+    mix-blend-mode: color;
+    filter: blur(100px);
+    opacity: 0.4;
 
     animation:
-        moveDiagonal 4s linear infinite -2s,
-        colorShift 3s linear infinite -1s;
-}
+        moveDiagonal 10s linear infinite,
+        colorShiftDiagonal 2s linear infinite;
+    }
+
 
 /* --- Animaciones --- */
 @keyframes moveDiagonal {
     0% {
-        transform: translate(-60%, -60%) rotate(-45deg);
+        transform: translate(-60%, -60%) rotate(-220deg);
     }
 
-    100% {
-        transform: translate(60%, 60%) rotate(-45deg);
+    100%{
+        transform: translate(200%, 200%) rotate(-220deg) ;
     }
 }
 
 /* Movimiento del color arcoíris */
-@keyframes colorShift {
+@keyframes colorShiftDiagonal{
     0% {
-        background-position: 50% 50%;
-    }
-
-    50% {
-        background-position: 150% 150%;
-    }
-
-    100% {
         background-position: 0% 0%;
     }
+    100% {
+        background-position: 150% 150%;
+    }
 }
+
 
 @media (min-width:1300px) {
 
@@ -548,17 +587,20 @@ h4 {
         margin-bottom: 1rem;
     }
 
-    .homepage-text{
+    .homepage-text {
         flex-direction: column;
     }
 
-    .right, .left{
+    .right,
+    .left {
         width: 100%;
     }
 
-    h3, li{
+    h3,
+    li {
         font-size: 1rem;
     }
+
     h2 {
         margin: 1rem 0 1.4rem 0;
     }
