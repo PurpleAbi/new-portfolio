@@ -168,7 +168,7 @@ img {
 .title {
     margin: 1rem 0 0 0;
     text-align: center;
-    height: 20vh;
+    height: 24vh;
 }
 
 h1 {
@@ -182,10 +182,10 @@ h1 {
 
 .holo-title {
     background:
-         linear-gradient(110deg,
+        linear-gradient(110deg,
             #FFCACC 0%,
-            rgb(216, 219, 174) 10%,
-            #FAF3F0 20%,
+            #FAF3F0 10%,
+            rgb(216, 219, 174) 20%,
             #D4E2D4 30%,
             rgb(175, 244, 243) 40%,
             rgb(166, 195, 229) 50%,
@@ -196,27 +196,31 @@ h1 {
             #FFCACC 100%);
 
     background-size: 200% 200%;
-    background-blend-mode: color;
+    background-blend-mode: overlay;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
     animation: colorShift 20s linear infinite;
-    mix-blend-mode: overlay;
-    filter: blur(.2px);
-    opacity: 0.8;
+    mix-blend-mode: lighten;
 }
 
-@keyframes colorShift{
+@keyframes colorShift {
     0% {
         background-position: 0% 0%;
     }
-    50%{
+
+    50% {
         background-position: -200% 0;
     }
+
     100% {
         background-position: -200% 0%;
     }
+}
+
+.hidden-br {
+    display: none;
 }
 
 .title {
@@ -429,10 +433,9 @@ h4 {
             rgba(255, 255, 255, 0.8) 49%,
             rgba(255, 255, 255, 1) 50%,
             rgba(255, 255, 255, 0.8) 51%,
-            transparent 53%), 
+            transparent 53%),
         /* Gradiente arcoíris holográfico */
-        linear-gradient(
-            rgba(255, 0, 0, 1) 0%,
+        linear-gradient(rgba(255, 0, 0, 1) 0%,
             rgba(255, 154, 0, 1) 10%,
             rgba(208, 222, 33, 1) 20%,
             rgba(79, 220, 74, 1) 30%,
@@ -453,7 +456,7 @@ h4 {
     animation:
         moveDiagonal 10s linear infinite,
         colorShiftDiagonal 2s linear infinite;
-    }
+}
 
 
 /* --- Animaciones --- */
@@ -462,16 +465,17 @@ h4 {
         transform: translate(-60%, -60%) rotate(-220deg);
     }
 
-    100%{
-        transform: translate(200%, 200%) rotate(-220deg) ;
+    100% {
+        transform: translate(200%, 200%) rotate(-220deg);
     }
 }
 
 /* Movimiento del color arcoíris */
-@keyframes colorShiftDiagonal{
+@keyframes colorShiftDiagonal {
     0% {
         background-position: 0% 0%;
     }
+
     100% {
         background-position: 150% 150%;
     }
@@ -587,15 +591,6 @@ h4 {
         margin-bottom: 1rem;
     }
 
-    .homepage-text {
-        flex-direction: column;
-    }
-
-    .right,
-    .left {
-        width: 100%;
-    }
-
     h3,
     li {
         font-size: 1rem;
@@ -625,4 +620,34 @@ h4 {
         height: 300%;
     }
 
+}
+
+@media (max-width:720px) {
+    .title {
+        height: 26vh;
+    }
+
+    .hidden-br {
+        display: inherit;
+    }
+
+    .homepage-text {
+        flex-direction: column;
+    }
+
+    .right,
+    .left {
+        width: 100%;
+    }
+    h2{
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+    .left{
+        gap: .8rem !important;
+    }
+    .right{
+        padding: 1rem;
+        margin-top: .8rem;
+    }
 }
