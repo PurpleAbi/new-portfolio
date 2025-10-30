@@ -616,8 +616,8 @@ h4 {
     }
 
     .holo-background::before {
-        width: 50%;
-        height: 300%;
+        width: 150%;
+        height: 100%;
     }
 
 }
