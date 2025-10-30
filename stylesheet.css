@@ -253,7 +253,7 @@ h1 {
     }
 }
 
-.title span:nth-child(2).active {
+.title span:nth-child(3).active {
     animation: shrinkjump 1s ease-in-out;
     transform-origin: bottom center;
 }
@@ -275,7 +275,7 @@ h1 {
     }
 }
 
-.title span:nth-child(3).active {
+.title span:nth-child(5).active {
     animation: falling 2s ease-out;
     transform-origin: bottom center;
 }
