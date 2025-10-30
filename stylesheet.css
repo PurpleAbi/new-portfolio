@@ -625,7 +625,6 @@ h4 {
 @media (max-width:720px) {
     .title {
         letter-spacing: 3px;
-        word-spacing: 6px;
         height: 26vh;
     }
 
@@ -644,6 +643,7 @@ h4 {
     h2{
         font-size: 1rem;
         margin-bottom: 0;
+        word-spacing: 8px;
     }
     .left{
         gap: .8rem !important;
