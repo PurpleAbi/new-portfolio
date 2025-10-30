@@ -656,19 +656,20 @@ h4 {
 }
 @media (min-width: 400px) and (max-width:1050px) and (min-height: 800px){
     .title{
-        padding-top: 4rem;
+        padding-top: 3.2rem;
+        height: 30vh;
     }
 
     .homepage-text{
         margin-top: 2rem;
     }
+
+    h1{
+        font-size: 2.8rem;
+    }
 }
 
 @media (min-width: 600px) and (max-width:1050px) and (min-height: 800px){
-
- h1{
-        font-size: 3.2rem;
-    }
 
     .title{
         padding-top: 8rem;
