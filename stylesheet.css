@@ -624,6 +624,8 @@ h4 {
 
 @media (max-width:720px) {
     .title {
+        letter-spacing: 3px;
+        word-spacing: 6px;
         height: 26vh;
     }
 
@@ -650,4 +652,26 @@ h4 {
         padding: 1rem;
         margin-top: .8rem;
     }
+
+}
+@media (min-width: 400px) and (max-width:1050px) and (min-height: 800px){
+    .title{
+        padding-top: 4rem;
+    }
+
+    .homepage-text{
+        margin-top: 2rem;
+    }
+}
+
+@media (min-width: 600px) and (max-width:1050px) and (min-height: 800px){
+
+ h1{
+        font-size: 3.2rem;
+    }
+
+    .title{
+        padding-top: 8rem;
+    }
+
 }
