@@ -34,7 +34,7 @@ if (!right) console.warn('Element .right not found in DOM');
 const lists = right ? right.querySelectorAll('.project-list') : [];
 let activeList = null;
 
-// Inicializar atributos ARIA y accesibilidad básica
+// Initialize basic accessibility
 categories.forEach(cat => {
   // Mark as button for assistive tech and allow keyboard focus
   if (!cat.hasAttribute('role')) cat.setAttribute('role', 'button');
@@ -130,7 +130,7 @@ function slideUp(element, onComplete) {
   element.classList.add('animating');
   element.style.height = element.scrollHeight + 'px';
 
-  // Forzar reflow (importante para que la animación funcione bien)
+  // Forzar reflow 
   void element.offsetHeight;
 
   element.style.height = '0';

@@ -201,7 +201,7 @@ h1 {
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    animation: colorShift 20s linear infinite;
+    animation: colorShift 14s linear infinite;
     mix-blend-mode: lighten;
 }
 
