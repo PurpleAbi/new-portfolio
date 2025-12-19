@@ -420,6 +420,7 @@ h4 {
 
 /* --- Franja holográfica animada --- */
 .holo-background::before {
+    z-index: 0;
     content: "";
     position: absolute;
     top: 30%;

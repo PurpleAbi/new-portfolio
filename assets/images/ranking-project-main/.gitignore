@@ -1,0 +1,19 @@
+# IDEs
+.idea/
+*.swp
+*.iml
+.vscode/
+
+# Node / Frontend
+client/node_modules/
+client/dist/
+client/.env*
+!client/.env.example
+
+# Java / Backend
+server/target/
+server/out/
+*.class
+
+# Logs
+*.log

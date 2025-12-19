@@ -1,0 +1,176 @@
+.titles {
+    font-family: "Questrial", serif;
+}
+
+body {
+    font-family: "PT Serif", serif;
+    background-color: #FFEBB7;
+    display: flex;
+    justify-content: center;
+
+}
+
+.home {
+    width: 0;
+    height: 0;
+}
+
+.house-img {
+    position: relative;
+    left: 3vw;
+    top: 8vh;
+    z-index: 1;
+    width: 3rem;
+    height: 3rem;
+}
+
+.house-img:hover {
+    transform: scale(1.2);
+}
+
+.container {
+    width: 80vw;
+    padding: .6rem 0 .8rem 0;
+}
+
+.title-page {
+    height: 93vh;
+    background-image: url('/assets/popcorn_background.jpg');
+    background-size: cover;
+    background-position: right top;
+    box-shadow: 10px 10px 5px lightgrey;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: start;
+}
+
+.text {
+    text-align: end;
+    background-color: #20236df0;
+    margin-left: -3rem;
+    color: white;
+    padding: 2rem;
+    border-radius: 0 2rem 2rem 0;
+    margin-left: .25rem;
+    margin-top: 3.5rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr 3fr;
+    gap: 1.5rem;
+    text-align: justify;
+    margin-top: 2rem;
+}
+.cards .titles, .rating{
+        margin: 0;
+}
+.card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.img-div{
+   height: 100%;
+}
+.poster-img{
+    height: 100%;
+}
+.arrow-div{
+    align-self: flex-end;
+    display: flex;
+    gap: 6px;
+    margin:6px 4px 0 0;
+    height: 20px;
+}
+.arrow-text{
+    height: 20px;
+    padding: 0;
+    margin: 0;
+}
+.arrow-img{
+    width: 20px;
+    height: 20px ;
+    padding-top: 2px;
+}
+.subtitle {
+    grid-column: span 3;
+    background-color: #E67A7A;
+    text-align: center;
+    color: white;
+    padding-top: 1rem;
+}
+
+.years {
+    margin-left: .6rem;
+    font-family: "PT Serif", serif;
+    font-size: 1.4rem;
+    background-color: #20236D;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    body {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        width: 86vw;
+        align-items: center;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1.2fr repeat(3, 6fr) 1.2fr repeat(3, 6fr);
+        margin-bottom: 1rem;
+    }
+
+    .flip-card {
+        grid-column: span 3;
+    }
+
+    .title-page {
+        background-size: contain;
+        background-position: right center;
+        background-attachment: fixed;
+    }
+
+    .house-img {
+        left: 6vw;
+        top: 6vh;
+    }
+
+    .years {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width:800px) and (max-width: 1024px){
+    .cards{
+        font-size: .8rem;
+    }
+}
+
+
+@media (min-width: 1900px) {
+    .title-page {
+        height: 96vh;
+    }
+    .cards{
+        grid-template-rows: 1fr 6fr 1fr 6fr;
+    }
+
+    .flip-card-back > .card-content{
+        padding: 4rem;
+    }
+
+    .arrow-div{
+    margin:6px 12px 0 0;
+}
+}
