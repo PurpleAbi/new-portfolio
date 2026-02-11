@@ -8,7 +8,11 @@ function closeNav() {
 }
 
 if (document.title == 'About Abi') {
-  const myAge = (new Date().getFullYear()) - 1995;
+  const date = new Date();
+  let myAge = (date.getFullYear()) - 1995;
+  if(date.getMonth() == 3 && date.getDate() < 22 || date.getMonth() < 3){
+    myAge -= 1;
+  } 
   document.getElementById("my-age").innerText = myAge;
 }
 
@@ -34,14 +38,14 @@ if (!right) console.warn('Element .right not found in DOM');
 const lists = right ? right.querySelectorAll('.project-list') : [];
 let activeList = null;
 
-// Initialize basic accessibility
-categories.forEach(cat => {
-  // Mark as button for assistive tech and allow keyboard focus
-  if (!cat.hasAttribute('role')) cat.setAttribute('role', 'button');
-  if (!cat.hasAttribute('tabindex')) cat.setAttribute('tabindex', '0');
-  // Initial aria state
-  cat.setAttribute('aria-expanded', 'false');
-});
+// // Initialize basic accessibility
+// categories.forEach(cat => {
+//   // Mark as button for assistive tech and allow keyboard focus
+//   if (!cat.hasAttribute('role')) cat.setAttribute('role', 'button');
+//   if (!cat.hasAttribute('tabindex')) cat.setAttribute('tabindex', '0');
+//   // Initial aria state
+//   cat.setAttribute('aria-expanded', 'false');
+// });
 
 lists.forEach(list => {
   // Initially hidden
