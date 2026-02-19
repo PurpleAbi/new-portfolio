@@ -169,7 +169,6 @@ img {
     width: 180px;
     height: 180px;
     object-fit: cover;
-
 }
 
 .icon-homepage {
@@ -503,7 +502,7 @@ h4 {
 @media (min-width:1300px) {
 
     body {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
     }
 
     h1 {
@@ -517,12 +516,12 @@ h4 {
 
     .parent-header {
         height: 6vh;
-        margin-top: 3rem;
+        margin-top: 2rem;
         padding-bottom: 0;
     }
 
     .title {
-        margin-top: 5rem;
+        margin-top: 2rem;
         height: 18vh;
     }
 }
@@ -692,7 +691,6 @@ h4 {
 }
 
 @media (min-width: 600px) and (max-width:1050px) and (min-height: 800px){
-
 
     .title{
         padding-top: 8rem;
