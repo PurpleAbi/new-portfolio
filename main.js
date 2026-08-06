@@ -1,10 +1,14 @@
 
 function openNav() {
   document.getElementById("myNav").style.height = "90vh";
+  const toggle = document.querySelector(".icon");
+  if (toggle) toggle.setAttribute("aria-expanded", "true");
 }
 
 function closeNav() {
   document.getElementById("myNav").style.height = "0%";
+  const toggle = document.querySelector(".icon");
+  if (toggle) toggle.setAttribute("aria-expanded", "false");
 }
 
 if (document.title == 'About Abi') {
@@ -38,33 +42,15 @@ if (!right) console.warn('Element .right not found in DOM');
 const lists = right ? right.querySelectorAll('.project-list') : [];
 let activeList = null;
 
-// // Initialize basic accessibility
-// categories.forEach(cat => {
-//   // Mark as button for assistive tech and allow keyboard focus
-//   if (!cat.hasAttribute('role')) cat.setAttribute('role', 'button');
-//   if (!cat.hasAttribute('tabindex')) cat.setAttribute('tabindex', '0');
-//   // Initial aria state
-//   cat.setAttribute('aria-expanded', 'false');
-// });
-
 lists.forEach(list => {
   // Initially hidden
   list.setAttribute('aria-hidden', 'true');
 });
 
-// Allow keyboard activation (Enter / Space) on categories
-categories.forEach(cat => {
-  cat.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      cat.click();
-    }
-  });
-});
-
 categories.forEach(category => {
   category.addEventListener('click', e => {
-    const targetId = e.currentTarget.dataset.target;
+    const currentTarget = e.currentTarget;
+    const targetId = currentTarget.dataset.target;
     const targetList = document.getElementById(targetId);
     if (!targetList) {
       console.warn('Target list not found for id:', targetId);
@@ -80,10 +66,10 @@ categories.forEach(category => {
         }
         // Update ARIA states
         targetList.setAttribute('aria-hidden', 'true');
-        e.currentTarget.setAttribute('aria-expanded', 'false');
+        currentTarget.setAttribute('aria-expanded', 'false');
       });
       activeList = null;
-      e.currentTarget.classList.remove('active');
+      currentTarget.classList.remove('active');
       return;
     }
 
@@ -94,8 +80,8 @@ categories.forEach(category => {
       cat.classList.remove('active');
       cat.setAttribute('aria-expanded', 'false');
     });
-    e.currentTarget.classList.add('active');
-    e.currentTarget.setAttribute('aria-expanded', 'true');
+    currentTarget.classList.add('active');
+    currentTarget.setAttribute('aria-expanded', 'true');
 
     // Quita visibilidad de todas las listas *antes* de iniciar la animación
     lists.forEach(list => {

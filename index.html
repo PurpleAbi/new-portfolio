@@ -4,7 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abi's Portfolio</title>
+    <title>Abigail Santana Medina | Web Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Abigail Santana Medina, a web developer building frontend, fullstack and backend projects.">
+    <link rel="canonical" href="https://abismportfolio.netlify.app/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ASM Portfolio">
+    <meta property="og:url" content="https://abismportfolio.netlify.app/">
+    <meta property="og:title" content="Abigail Santana Medina | Web Developer Portfolio">
+    <meta property="og:description" content="Portfolio of Abigail Santana Medina, a web developer building frontend, fullstack and backend projects.">
+    <meta property="og:image" content="https://abismportfolio.netlify.app/assets/images/web-app-manifest-512x512.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Abigail Santana Medina | Web Developer Portfolio">
+    <meta name="twitter:description" content="Portfolio of Abigail Santana Medina, a web developer building frontend, fullstack and backend projects.">
+    <meta name="twitter:image" content="https://abismportfolio.netlify.app/assets/images/web-app-manifest-512x512.png">
+
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,18 +43,18 @@
                 <p class="logo">ASM Portfolio</p>
             </div>
             <div id="myNav" class="overlay">
-                <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" style="display: none;">
+                <button type="button" class="closebtn" onclick="closeNav()" aria-label="Close navigation menu" style="display: none;">
                     <i class="fa fa-times" aria-hidden="true"></i>
-                </a>
-                <div class="child-header overlay-content links">
+                </button>
+                <nav class="child-header overlay-content links" aria-label="Main navigation">
                     <a href="./public/about.html">About me</a>
                     <a href="https://purpleabi.github.io/maquetacion-portafolio/">Virtual Resumee</a>
                     <a href="./public/contact.html">Contact</a>
-                </div>
+                </nav>
             </div>
-            <a href="javascript:void(0);" class="icon" onclick="openNav()" style="display: none;">
+            <button type="button" class="icon" onclick="openNav()" aria-label="Open navigation menu" aria-controls="myNav" aria-expanded="false" style="display: none;">
                 <i class="fa fa-bars"></i>
-            </a>
+            </button>
         </header>
 
         <div class="title">
@@ -51,18 +66,18 @@
 
         <div class="homepage-text">
             <div class="left">
-                <div class="categories hover-underline-animation" data-target="frontend">
+                <button type="button" class="categories hover-underline-animation" data-target="frontend" aria-expanded="false" aria-controls="frontend">
                     <img class="icon-homepage" src="assets/images/browser-check.svg" alt="">
                     <h3>Frontend Projects</h3>
-                </div>
-                <div class="categories hover-underline-animation" data-target="fullstack">
+                </button>
+                <button type="button" class="categories hover-underline-animation" data-target="fullstack" aria-expanded="false" aria-controls="fullstack">
                     <img class="icon-homepage" src="assets/images/stack-3.svg" alt="">
                     <h3>Fullstack Projects</h3>
-                </div>
-                <div class="categories hover-underline-animation" data-target="backend">
+                </button>
+                <button type="button" class="categories hover-underline-animation" data-target="backend" aria-expanded="false" aria-controls="backend">
                     <img class="icon-homepage" src="assets/images/database (1).svg" alt="">
                     <h3>Backend Projects</h3>
-                </div>
+                </button>
             </div>
             <div class="right hidden">
                 <ul id="frontend" class="project-list ">
