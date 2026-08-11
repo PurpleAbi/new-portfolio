@@ -48,7 +48,7 @@
                 </button>
                 <nav class="child-header overlay-content links" aria-label="Main navigation">
                     <a href="./public/about.html">About me</a>
-                    <a href="https://purpleabi.github.io/maquetacion-portafolio/">Virtual Resumee</a>
+                    <a href="https://purpleabi.github.io/maquetacion-portafolio/">Virtual Resume</a>
                     <a href="./public/contact.html">Contact</a>
                 </nav>
             </div>
@@ -64,8 +64,8 @@
             <h2>WEB DEVELOPER</h2>
         </div>
 
-        <div class="homepage-text">
-            <div class="left">
+        <div class="explorer" id="explorer" data-state="collapsed">
+            <div class="categories-wrap" id="categoriesWrap">
                 <button type="button" class="categories hover-underline-animation" data-target="frontend" aria-expanded="false" aria-controls="frontend">
                     <img class="icon-homepage" src="assets/images/browser-check.svg" alt="">
                     <h3>Frontend Projects</h3>
@@ -79,24 +79,60 @@
                     <h3>Backend Projects</h3>
                 </button>
             </div>
-            <div class="right hidden">
-                <ul id="frontend" class="project-list ">
-                    <li><a href="https://www.salonnajahode.cz/"><i class="fa fa-heart-o" aria-hidden="true"></i>Salon na Jahode</a></li>
-                    <li><a href="./3.4 Birthday Invite Project/index.html"><i class="fa fa-heart-o" aria-hidden="true"></i>Birthday Invitation</a></li>
-                    <li><a href="https://purpleabi.github.io/maquetacion-portafolio/"><i class="fa fa-heart-o" aria-hidden="true"></i>Virtual Resumee</a></li>
+
+            <div class="reveal" id="reveal">
+                <ul id="frontend" class="project-list">
+                    <li><a class="project-card" href="https://www.salonnajahode.cz/" target="_blank" rel="noopener">
+                        <div class="card-thumb"><img src="assets/images/previews/salon-na-jahode.jpg" alt="Salon na Jahode homepage"></div>
+                        <span class="card-tag">Client project</span>
+                        <div class="card-body"><h4>Salon na Jahode</h4><p>Hair salon site — services & booking.</p></div>
+                    </a></li>
+                    <li><a class="project-card" href="./3.4 Birthday Invite Project/index.html" target="_blank" rel="noopener">
+                        <div class="card-thumb"><img src="assets/images/previews/birthday-invite.jpg" alt="Birthday invitation preview"></div>
+                        <span class="card-tag">Personal project</span>
+                        <div class="card-body"><h4>Birthday Invitation</h4><p>Animated digital invite page.</p></div>
+                    </a></li>
+                    <li><a class="project-card" href="https://purpleabi.github.io/maquetacion-portafolio/" target="_blank" rel="noopener">
+                        <div class="card-thumb"><img src="assets/images/previews/virtual-resumee.jpg" alt="Virtual resume preview"></div>
+                        <span class="card-tag">Personal project</span>
+                        <div class="card-body"><h4>Virtual Resume</h4><p>Interactive résumé landing page.</p></div>
+                    </a></li>
                 </ul>
 
-                <ul id="fullstack" class="project-list ">
-                    <li><a href="https://tired-overthinker-cook.onrender.com/"><i class="fa fa-star-o" aria-hidden="true"></i>Tired Overthinker Cook</a></li>
-                    <li><a href="https://ranking-blog-docker-containers.onrender.com/"><i class="fa fa-star-o" aria-hidden="true"></i>My Yearly Reviews</a></li>
-                    <li><a href="https://github.com/TheDanilore/churn-insight-project.git"><i class="fa fa-star-o" aria-hidden="true"></i>ChurnInsight</a></li>
-
+                <ul id="fullstack" class="project-list">
+                    <li><a class="project-card" href="https://tired-overthinker-cook.onrender.com/" target="_blank" rel="noopener">
+                        <div class="card-thumb"><img src="assets/images/previews/tired-overthinker-cook.jpg" alt="Tired Overthinker Cook preview"></div>
+                        <span class="card-tag">Personal project</span>
+                        <div class="card-body"><h4>Tired Overthinker Cook</h4><p>Random recipe generator by mood.</p></div>
+                    </a></li>
+                    <li><a class="project-card" href="https://ranking-blog-docker-containers.onrender.com/" target="_blank" rel="noopener">
+                        <div class="card-thumb"><img src="assets/images/previews/yearly-reviews.jpg" alt="My Yearly Reviews preview"></div>
+                        <span class="card-tag">Personal project</span>
+                        <div class="card-body"><h4>My Yearly Reviews</h4><p>Dockerized movie/series ranking blog.</p></div>
+                    </a></li>
+                    <li><a class="project-card" href="https://github.com/TheDanilore/churn-insight-project.git" target="_blank" rel="noopener">
+                        <div class="card-thumb"><img src="assets/images/previews/churninsight.png" alt="Churn Inisght preview"></div>
+                        <span class="card-tag">Hackathon project</span>
+                        <div class="card-body"><h4>ChurnInsight</h4><p>Customer churn analysis & prediction.</p></div>
+                    </a></li>
                 </ul>
 
-                <ul id="backend" class="project-list ">
-                    <li><a href="https://github.com/PurpleAbi/literalura-challenge"><i class="fa fa-moon-o" aria-hidden="true"></i>Literalura</a></li>
-                    <li><a href="https://github.com/PurpleAbi/forohub"><i class="fa fa-moon-o" aria-hidden="true"></i>Forohub</a></li>
-                    <li><a href="https://github.com/PurpleAbi/currency-calculator"><i class="fa fa-moon-o" aria-hidden="true"></i>Currency Calculator</a></li>
+                <ul id="backend" class="project-list">
+                    <li><a class="project-card" href="https://github.com/PurpleAbi/literalura-challenge" target="_blank" rel="noopener">
+                        <div class="card-thumb placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7"><path d="M9 18l-5-6 5-6M15 6l5 6-5 6"/></svg></div>
+                        <span class="card-tag">Course project</span>
+                        <div class="card-body"><h4>Literalura</h4><p>CLI app cataloging books via a public API.</p></div>
+                    </a></li>
+                    <li><a class="project-card" href="https://github.com/PurpleAbi/forohub" target="_blank" rel="noopener">
+                        <div class="card-thumb placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7"><path d="M9 18l-5-6 5-6M15 6l5 6-5 6"/></svg></div>
+                        <span class="card-tag">Course project</span>
+                        <div class="card-body"><h4>Forohub</h4><p>REST API forum backend, Spring Boot.</p></div>
+                    </a></li>
+                    <li><a class="project-card" href="https://github.com/PurpleAbi/currency-calculator" target="_blank" rel="noopener">
+                        <div class="card-thumb placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7"><path d="M9 18l-5-6 5-6M15 6l5 6-5 6"/></svg></div>
+                        <span class="card-tag">Course project</span>
+                        <div class="card-body"><h4>Currency Calculator</h4><p>Currency conversion calculator API.</p></div>
+                    </a></li>
                 </ul>
             </div>
         </div>

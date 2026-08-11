@@ -37,15 +37,23 @@ spans.forEach((span, idx) => {
 });
 
 const categories = document.querySelectorAll('.categories');
-const right = document.querySelector('.right');
-if (!right) console.warn('Element .right not found in DOM');
-const lists = right ? right.querySelectorAll('.project-list') : [];
-let activeList = null;
+const explorer = document.getElementById('explorer');
+const reveal = document.getElementById('reveal');
+const lists = reveal ? reveal.querySelectorAll('.project-list') : [];
+let activeBtn = null;
 
 lists.forEach(list => {
   // Initially hidden
   list.setAttribute('aria-hidden', 'true');
 });
+
+function showList(targetId) {
+  lists.forEach(list => {
+    const isMatch = list.id === targetId;
+    list.classList.toggle('visible', isMatch);
+    list.setAttribute('aria-hidden', isMatch ? 'false' : 'true');
+  });
+}
 
 categories.forEach(category => {
   category.addEventListener('click', e => {
@@ -57,81 +65,30 @@ categories.forEach(category => {
       return;
     }
 
-    if(activeList === targetList) {
-        // Close the currently active list. When finished, hide the right column.
-      slideUp(targetList, () => {
-        if (right) {
-          right.classList.add('hidden');
-          right.classList.remove('visible');
-        }
-        // Update ARIA states
-        targetList.setAttribute('aria-hidden', 'true');
-        currentTarget.setAttribute('aria-expanded', 'false');
-      });
-      activeList = null;
+    if (activeBtn === currentTarget) {
+      // Same category clicked again: collapse back to the default state.
+      reveal.classList.remove('open');
+      explorer.dataset.state = 'collapsed';
       currentTarget.classList.remove('active');
+      currentTarget.setAttribute('aria-expanded', 'false');
+      targetList.setAttribute('aria-hidden', 'true');
+      activeBtn = null;
       return;
     }
 
-    if (activeList) slideUp(activeList);
-
-    // Marca la categoría activa y actualiza aria-expanded
-    categories.forEach(cat=>{
+    categories.forEach(cat => {
       cat.classList.remove('active');
       cat.setAttribute('aria-expanded', 'false');
     });
     currentTarget.classList.add('active');
     currentTarget.setAttribute('aria-expanded', 'true');
 
-    // Quita visibilidad de todas las listas *antes* de iniciar la animación
-    lists.forEach(list => {
-      list.classList.remove('visible');
-    });
-
-    // Muestra la sección derecha
-    if (right) {
-      right.classList.remove('hidden');
-      right.classList.add('visible');
-    }
-
-  // Inicia la animación de apertura y actualiza aria-hidden
-  targetList.setAttribute('aria-hidden', 'false');
-  slideDown(targetList);
-  activeList = targetList;
+    showList(targetId);
+    explorer.dataset.state = 'expanded';
+    reveal.classList.add('open');
+    activeBtn = currentTarget;
   });
 });
-
-function slideDown(element){
-  element.classList.add('animating');
-  element.style.height = element.scrollHeight + "px";
-  element.style.opacity ='1';
-
-// Esperar a que termine la animación
-    element.addEventListener('transitionend', function handler() {
-    element.classList.remove('animating');
-    element.style.height = 'auto';
-    element.removeEventListener('transitionend', handler);
-  });
-
-  element.classList.add('visible');
-}
-
-function slideUp(element, onComplete) {
-  element.classList.add('animating');
-  element.style.height = element.scrollHeight + 'px';
-
-  // Forzar reflow 
-  void element.offsetHeight;
-
-  element.style.height = '0';
-  element.style.opacity = '0';
-
-  element.addEventListener('transitionend', function handler() {
-    element.classList.remove('animating', 'visible');
-    element.removeEventListener('transitionend', handler);
-    if (typeof onComplete === 'function') onComplete();
-  });
-}
 
 
 
